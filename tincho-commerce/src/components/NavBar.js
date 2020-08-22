@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink,
   UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, NavbarText } from 'reactstrap';
+import logo from './../resources/logo.png';
+import loguito from './../resources/loguito.png';
 import Searchbox from './SearchBox'
+import CartIcon from './CartIcon'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faShoppingCart, faUserCircle } from '@fortawesome/free-solid-svg-icons'
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
+
 import './css/styles.css';
 
 const NavPpal = (props) => {
@@ -11,23 +15,18 @@ const NavPpal = (props) => {
 
   const toggle = () => setIsOpen(!isOpen);
 
-  const carrito = <FontAwesomeIcon icon={faShoppingCart} />
   const usuario = <FontAwesomeIcon icon={faUserCircle} />
-
+  const displayFlex = "flex";
+  //<NavbarBrand href="/" className="text-white">Reactive Market</NavbarBrand>
   return (
-    <div>
-      <Navbar color="light" light expand="md" className="nav-background">
-        <NavbarBrand href="/" className="text-white">Reactive Market</NavbarBrand>
+      <Navbar color="light" light expand="md" className="nav-background flex-space-between" style={{display:displayFlex}}>
+        <NavbarBrand href="/" className="text-white flexible"><img src={logo} /></NavbarBrand>
         <Searchbox/>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
-          </Nav>
-        </Collapse>
-        <NavLink href="/" className="text-white">{carrito}</NavLink>
-        <NavLink href="/" className="text-white">{usuario}</NavLink>
+        <div style={{display:displayFlex}}>
+          <NavLink href="/" className="text-white icon-link"><CartIcon/></NavLink>
+          <NavLink href="/" className="text-white icon-link">{usuario}</NavLink>
+        </div>
       </Navbar>
-    </div>
   );
 }
 
