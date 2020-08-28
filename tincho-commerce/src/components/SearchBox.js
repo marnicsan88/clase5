@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { InputGroup, InputGroupAddon, InputGroupText, Input } from 'reactstrap';
 import { UncontrolledButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch} from '@fortawesome/free-solid-svg-icons'
 
-const Searchbox = () => {
+import './css/searchBoxStyles.css';
+
+const Searchbox = (props) => {
   const lupita = <FontAwesomeIcon icon={faSearch} />
   return (
-      <InputGroup className="w-65" size="sm">
+      <InputGroup className="search-width" size="sm">
         <InputGroupAddon addonType="prepend">
           <UncontrolledButtonDropdown >
             <DropdownToggle caret color="info" size="sm" className="w-25">
@@ -21,7 +23,7 @@ const Searchbox = () => {
             </DropdownMenu>
             </UncontrolledButtonDropdown>
         </InputGroupAddon>
-        <Input placeholder="Buscar Producto..." />
+        <Input placeholder="Buscar Producto..." style={{backgroundClip:"border-box"}} />
         <InputGroupAddon addonType="append">
           <InputGroupText>{lupita}</InputGroupText>
         </InputGroupAddon>

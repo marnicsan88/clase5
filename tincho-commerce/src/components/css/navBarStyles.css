@@ -13,10 +13,6 @@ a.flexible{
     display:flex !important;
 }
 
-.w-65{
-    width:65% !important;
-}
-
 .nav-link{
     padding: 0.5rem 0.65rem;
     
