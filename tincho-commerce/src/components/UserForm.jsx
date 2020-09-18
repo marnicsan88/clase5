@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Link, useParams } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const Userform = (props) => {
+    
     return (
       <Form>
         <Row form>
@@ -32,7 +35,7 @@ const Userform = (props) => {
             </FormGroup>
           </Col>
         </Row>
-        <Button>Grabar</Button>
+        <Button><Link to={"/que"} style={{color:"#fff",fontDecoration:"none"}}>Grabar</Link></Button>
       </Form>
     );
   }

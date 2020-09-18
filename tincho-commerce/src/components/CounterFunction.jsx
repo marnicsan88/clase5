@@ -8,18 +8,16 @@ const Counter2 = (props) =>{
     const [fechaHora,updateFechaHora] = useState("")
 
     const sumar = () => {
-        let cont = contador
-        if(contador < props.max)
-            cont++;
-        updateContador(cont);
+        if(contador < props.max){
+            updateContador((cont) => cont + 1);
+        }
         getFechaHora();
     }
 
     const restar = () => {
-        let cont = contador
-        if(contador > props.min)
-            cont--;
-        updateContador(cont);
+        if(contador > props.min){
+            updateContador((cont) => cont - 1)
+        }
         getFechaHora();
     }
 

@@ -1,8 +1,9 @@
 import React from 'react';
-/*import logo from './logo.svg';*/
+import {BrowserRouter, Switch, Route } from 'react-router-dom';
+import UserForm from './components/UserForm';
 import NavPpal from './components/NavBar';
-import Home from './components/Home.js';
-import Userform from './components/UserForm';
+import Home from './pages/Home';
+
 import './App.css';
 
 function App() {
@@ -12,6 +13,21 @@ function App() {
       <Home greeting="Bienvenido" nombre="Tincho"/>
     </div>
   );
+  /*return (
+    <div>
+      <BrowserRouter>
+        <NavPpal/>
+        <Switch>
+          <Route exact path="/">
+            <UserForm/>
+          </Route>
+          <Route path="/que/:userId">
+            <Home greeting="Bienvenido" nombre="Tincho"/>
+          </Route>
+        </Switch>
+      </BrowserRouter>
+    </div>
+  );*/
 }
 
 export default App;

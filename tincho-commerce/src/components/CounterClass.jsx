@@ -21,14 +21,16 @@ export class Counter extends React.Component{
 
     sumar = () => {
         if(this.state.contador < this.props.max){
-            this.setState({contador: ++this.state.contador})
+            let cont = this.state.contador
+            this.setState(({contador: cont + 1}))
             this.getFechaHora()
         }
     }
 
     restar = () => {
         if(this.state.contador > this.props.min){
-            this.setState({contador: --this.state.contador})
+            let cont = this.state.contador
+            this.setState({contador: cont - 1})
             this.getFechaHora()
         }
     }
